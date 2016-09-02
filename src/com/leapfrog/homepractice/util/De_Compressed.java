@@ -1,17 +1,25 @@
 package com.leapfrog.homepractice.util;
+
+import java.util.Scanner;
+
 public class De_Compressed {
-    public String text = "AAAA!wwwweeeerhhhqwe";
+    
+    private String text;
     private String compressed_output="",decompressed_output="";
     private char prev = '0';
     private int count = 0;
+    Scanner value = new Scanner(System.in);
+
+    public void setText() {
+        System.out.println("Enter the text to Compress and decompress: ");
+        text = value.next();
+    }
+    
     
     public String getCompressed(){
         System.out.println("The compression value of "+text+" is ");
         for(int i = 0; i<text.length();i++){
             
-            if(i==text.length()){
-                System.out.print(count + String.valueOf(prev));
-            }
             if(prev=='0'){
                 prev= text.charAt(i);
                 count=1;
